@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import PokemonPage from "./page/PokemonPage.vue";
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
