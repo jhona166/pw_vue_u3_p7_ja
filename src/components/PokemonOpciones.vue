@@ -1,5 +1,5 @@
 <template>
-  <p1>Pokemon Opciones</p1>
+  <h1>Pokemon Opciones</h1>
 </template>
 
 <script>

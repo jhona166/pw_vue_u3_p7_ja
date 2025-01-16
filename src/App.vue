@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import PokemonPage from "./pages/PokemonPage.vue";
+import PokemonPage from "./page/PokemonPage.vue";
 
 export default {
   name: 'App',
