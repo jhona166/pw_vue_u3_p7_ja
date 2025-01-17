@@ -1,6 +1,6 @@
 <template>
    <h2> Adivina el pokemon de la Imagen</h2>
-   <PokemonImagen :pokemonId="56"/>
+   <PokemonImagen :pokemonId="56" :showPokemon="true"/>
    <PokemonOpciones/>
 </template>
 

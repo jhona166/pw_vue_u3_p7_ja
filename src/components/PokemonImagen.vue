@@ -1,11 +1,11 @@
 <template>
   <div class="pokemon-container">
-  <img
+  <img v-show="!showPokemon"
     :src="imagenFuente"
     alt="No se puede cargar" class="ocultar"
   />
 
-  <img
+  <img v-show="showPokemon"
     :src="imagenFuente"
     alt="No se puede cargar"
   />
@@ -18,6 +18,10 @@ export default {
     pokemonId:{
       type:Number,
       required:true
+    }, 
+    showPokemon:{
+      type:Boolean,
+      required: true,
     }
 
   },
