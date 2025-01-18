@@ -2,7 +2,7 @@
   <div class="options-container">
     
     <ul>
-        <li v-for="pokemon in pokemons" :key="pokemon.id">{{ pokemon.nombre }}</li>
+        <li @click="seleccionado" v-for="pokemon in pokemons" :key="pokemon.id">{{ pokemon.nombre }}</li>
       
     </ul>
 
@@ -18,7 +18,11 @@ export default {
 
         },
     },
-
+    methods:{
+        seleccionado(){
+            console.log('Hizo click');
+        }
+    }
 
 
 

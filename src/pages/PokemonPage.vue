@@ -10,7 +10,7 @@
 import PokemonImagen from "../components/PokemonImagen.vue";
 import PokemonOpciones from "../components/PokemonOpciones.vue";
 
-import consultarPokemonsFachada from "@/client/PokemonClient.js";
+import {consultarPokemonsFachada,obtenerAleatorioFachada} from "@/client/PokemonClient.js";
 
 export default {
   data() {
@@ -34,7 +34,9 @@ export default {
       console.log(arregloPokemons);
       this.pokemonArr = arregloPokemons;
 
-      const valorAleatorio = 3;
+      const valorAleatorio = obtenerAleatorioFachada(0,3);
+      console.log('Este es el aleatorio')
+      console.log(valorAleatorio);
       const pokemonCorrecto = this.pokemonArr[valorAleatorio];
       this.pokemonObjeto = pokemonCorrecto;
     },
