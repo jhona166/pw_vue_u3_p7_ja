@@ -1,35 +1,76 @@
-function obtenerAleatorio(min,max){
-    return Math.floor(Math.random() * (ma-min+1)+min);
-}
-
-const obtenerArregloNumerico=()=>{
-    const arreglo=[];
-    for(let i=0; i<4;i++){
-        arreglo[i] = obtenerAleatorio(1,600);
-
-    }
-    return arreglo;
-
-}
-
-const obtenerArregloPokemon = async (arreglo) => {
-    const arregloPokemons = [];
-    const obj1={
-
-    }
-
-    const obj2={
-
-    }
-    const obj3={
-
-    }
-    const obj4={
-
-    }
-    arregloPokemons[0]=obj1;
-    arregloPokemons[1]=obj1;
-    arregloPokemons[2]=obj1;
-    arregloPokemons[3]=obj1;
-
-}
+function obtenerAleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+   
+  const obtenerArregloNumerico=() =>{
+      const arreglo = [];
+      for (let i = 0; i < 4; i++) {
+         // arreglo.push(obtenerAleatorio(1, 600));
+         arreglo[i]=obtenerAleatorio(1, 600);
+      }
+      return arreglo;
+  }
+   
+  const obtenerArregloPokemons= async (arreglo)=>{
+   
+      const nom1= await consumiAPI(arreglo[0]);
+      const nom2= await consumiAPI(arreglo[1]);
+      const nom3= await consumiAPI(arreglo[2]);
+      const nom4= await consumiAPI(arreglo[3]);
+   
+      const obj1={
+          nombre: nom1,
+          id: arreglo[0],
+      };
+      const obj2={
+          nombre: nom2,
+          id: arreglo[1],
+      };
+      const obj3={
+          nombre: nom3,
+          id: arreglo[2],
+      };
+      const obj4={
+          nombre: nom4,
+          id: arreglo[3],
+      };
+      const arregloPokemons=[obj1, obj2, obj3, obj4];
+     
+      return arregloPokemons;
+  /*
+      for(let i=0; i<arreglo.length; i++){
+          const data = fetch(`https://pokeapi.co/api/v2/pokemon/${arreglo[i]}`)
+          .then(response => response.json())
+          console.log(data);
+      }
+          */
+   
+     
+  }
+   
+  const consumiAPI = async (id) =>{
+      const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+      .then(response => response.json())
+     
+      return data.name;
+   
+  }
+   
+  /////////////////////////////////
+  // Tengo qeu ahcer dos cosas para usar este metodod:
+  /*
+  1.-Declarar un metodo PARA ENVIARLO A UN ENVOLTORIO...
+  2.-Exportar el metodo fachada
+  */
+  //METODO
+    const consultarPokemons = async()=>{
+      return await obtenerArregloPokemons(obtenerArregloNumerico());
+  }
+   
+  //FACHADA
+  const consultarPokemonsFachada = async()=>{
+      return await consultarPokemons();
+  }
+   
+  export default consultarPokemonsFachada;
+   

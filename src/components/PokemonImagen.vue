@@ -52,9 +52,9 @@ export default {
 }
 img{
   height: 260px;
-  position: absolute;
+
   right: 40%;
-  bottom: 58%;
+  bottom: 46%;
 }
 
 </style>
