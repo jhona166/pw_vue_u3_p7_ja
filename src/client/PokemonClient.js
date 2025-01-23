@@ -42,6 +42,7 @@ const obtenerArregloPokemons = async (arreglo) => {
 
 }
 
+
 const consumiAPI = async (id) => {
     const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         .then(response => response.json())
