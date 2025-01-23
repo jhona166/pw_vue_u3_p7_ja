@@ -66,8 +66,9 @@ beforeUpdate(){
       console.log(valor);
       const idSeleccionado = valor.identificador;
       if(this.pokemonObjeto.id===idSeleccionado){
-        console.log("Selecciono el pokemon correcto")
-        this.pokemonShow=true;
+        console.log("Selecciono el pokemon correcto");
+        this.pokemonShow=valor.valor2;
+        //this.pokemonShow=true;
         this.showPokemon=false;
 
 
