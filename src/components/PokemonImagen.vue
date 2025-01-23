@@ -14,6 +14,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      propiedadPrueba:"Esto es un aprueba"
+    };
+  },
   props:{
     pokemonId:{
       type:Number,
